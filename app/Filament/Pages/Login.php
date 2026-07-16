@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use Filament\Auth\Pages\Login as BaseLogin;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Illuminate\Validation\ValidationException;
 use Override;
 
 class Login extends BaseLogin
@@ -35,4 +36,13 @@ class Login extends BaseLogin
                 $this->getRememberFormComponent(),
             ]);
     }
+
+    // tampilkan pesan error
+    protected function throwFailureValidationException(): never
+    {
+        throw ValidationException::withMessages([
+            'data.login' => 'Data login salah!',
+        ]);
+    }
+
 }
