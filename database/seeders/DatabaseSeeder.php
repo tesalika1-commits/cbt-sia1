@@ -19,12 +19,17 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Khairi Ibnutama',
-            'email' => 'mr.ibnutama@gmail.com',
+            'name' => 'Tesalika',
+            'email' => 'tesalika1@gmail.com',
             'username' => 'developer',
             'is_staff' => true,
             // use Illuminate\Support\Facades\Hash; <-- import di atas
             'password' => Hash::make('rahasia'),
+        ]);
+
+        $this->call([
+            SubjectSeeder::class,
+            QuestionSeeder::class,
         ]);
     }
 }
