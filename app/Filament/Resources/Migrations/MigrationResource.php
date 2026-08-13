@@ -17,7 +17,6 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use UnitEnum;
 
 class MigrationResource extends Resource
 {
@@ -26,8 +25,6 @@ class MigrationResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCircleStack;
 
     protected static ?string $recordTitleAttribute = 'migration';
-
-    protected static string|UnitEnum|null $navigationGroup = 'Sistem';
 
     protected static ?string $modelLabel = 'migration';
 
